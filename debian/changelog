@@ -1,0 +1,330 @@
+fonts-ipaexfont (00401-4) unstable; urgency=medium
+
+  * debian/control
+    - Set Standards-Version: 4.5.1
+  * debian/{copyright,control}
+    - Deal with upstream change with copyright assignment. IPAexfont was
+      assigned from Information-technology Promotion Agency, Japan (IPA)
+      to Japanese Character Information Technology Promotion Council (CITPC).
+      See https://mojikiban.ipa.go.jp/ (in Japanese)
+  * debian/fonts-ipaexfont-{gothic,mincho}.{dirs,lintian-overrides}
+    - Drop unnecessary empty *.dirs and its lintian overrides
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 31 Jul 2021 17:01:04 +0900
+
+fonts-ipaexfont (00401-3) unstable; urgency=medium
+
+  * debian/control
+    - Bump to debhelper-compat (= 13)
+    - Set Standards-Version: 4.5.0
+    - Add Rules-Requires-Root: no
+  * debian/salsa-ci.yml
+    - disable unnecessary tests
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 03 May 2020 02:01:59 +0900
+
+fonts-ipaexfont (00401-2) unstable; urgency=medium
+
+  * debian/rules
+    - fix permission setting (Closes: #928329)
+      Thanks to "Chris Lamb" <lamby@debian.org> for the patch
+  * debian/control
+    - set Standards-Version: 4.4.1
+    - use dh12
+  * debian/{control,fonts-ipaexfont-*.preinst}
+    - drop code for obsolete otf-ipaexfont-* packages
+  * add debian/salsa-ci.yml
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 17 Nov 2019 02:00:07 +0900
+
+fonts-ipaexfont (00401-1) unstable; urgency=medium
+
+  * New upstream release
+    - add U+32FF "SQUARE ERA NAME REIWA"
+  * debian/control
+    - update copyright year
+  * debian/copyright
+    - set Standards-Version: 4.3.0
+  * drop debian/watch, since upstream download page URL is created for
+    each releases...
+  * debian/rules
+    - fix executable-not-elf-or-script lintian warning
+
+ -- Hideki Yamane <henrich@debian.org>  Tue, 30 Apr 2019 00:28:16 +0900
+
+fonts-ipaexfont (00301-5) unstable; urgency=medium
+
+  * debian/watch
+    - Update to deal with upstream's change
+  * debian/control
+    - Update Vcs-* to use salsa.debian.org
+    - Update Maintainer address
+    - Set Standards-Version: 4.1.4
+  * debian/copyright
+    - Update copyright year
+  * debian/rules
+    - Use default compression
+  * Use dh11
+
+ -- Hideki Yamane <henrich@debian.org>  Fri, 01 Jun 2018 11:15:31 +0900
+
+fonts-ipaexfont (00301-4) unstable; urgency=medium
+
+  * debian/control
+    - set Standards-Version: 4.1.1 with no change
+    - update Homepage: to use https (now it is redirected to non-https, though) 
+  * debian/copyright
+    - update upstream URL to use https
+    - update copyright year
+  * debian/watch
+    - partially use https 
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 15 Oct 2017 06:40:12 +0900
+
+fonts-ipaexfont (00301-3) unstable; urgency=medium
+
+  * debian/control
+    - update Homepage 
+    - update Vcs-* to use https
+    - set Standards-Version: 3.9.8
+    - use debhelper 10
+  * debian/compat
+    - set 10
+  * update debian/watch
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 16 Oct 2016 09:44:43 +0900
+
+fonts-ipaexfont (00301-2) unstable; urgency=medium
+
+  * debian/control
+    - update descriptions (Closes: #785455)
+      Thanks to Osamu Aoki <osamu@debian.org> 
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 21 Nov 2015 08:33:00 +0900
+
+fonts-ipaexfont (00301-1) unstable; urgency=medium
+
+  * New upstream release 
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 17 Oct 2015 18:57:19 +0900
+
+fonts-ipaexfont (00201-5) unstable; urgency=medium
+
+  * debian/control
+    - set Standards-Version: 3.9.6
+    - update Vcs-Browser
+  * add debian/source/lintian-overrides to ignore lintian warning for license
+    text file
+
+ -- Hideki Yamane <henrich@debian.org>  Mon, 05 Jan 2015 21:39:29 +0900
+
+fonts-ipaexfont (00201-4) unstable; urgency=low
+
+  * debian/control
+    - drop obsolete otf- packages
+    - use canonical URL for Vcs-* 
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 16 Jun 2013 03:19:01 +0900
+
+fonts-ipaexfont (00201-3) unstable; urgency=low
+
+  * upload to unstable 
+  * debian/control
+    - update Standards-Version: 3.9.4
+    - move from svn to git
+    - set "Multi-Arch: foreign"
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 02 Jun 2013 13:39:39 +0900
+
+fonts-ipaexfont (00201-2) experimental; urgency=low
+
+  [ Andreas Beckmann <anbe@debian.org> ]
+  * introduce changes in 00103-14.1
+    - otf-ipaexfont-*.preinst: Unregister the ttf-japanese-*.ttf alternatives.
+    - fonts-ipaexfont-*.preinst: Clean up the ttf-japanese-*.ttf alternatives
+      set up by otf-ipaexfont-* in squeeze. This needs to be done in
+      fonts-ipaexfont-* as well since there is no guarantee that the
+      transitional otf-ipaexfont-* packages were installed and did clean this
+      up. Since new installations of fonts-ipaexfont-* cannot be distinguished
+      from "upgrades" from otf-ipaexfont-* this needs to be run on new
+     installations, too.  (Closes: #700435)
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 03 Mar 2013 09:57:21 +0900
+
+fonts-ipaexfont (00201-1) experimental; urgency=low
+
+  * New upstream release
+    - Added glyphs (6 glyphs), IDC (12 characters), KangXi radical, slightly
+      changed shapes (7 glyphs)
+    - IVSs are added to default glyph, consequently total number of IVSs
+      changed to 352. The default glyphs, which appear without IVS environment,
+      correspond to the exemplified shapes in JIS X 0213:2004. 
+    - Addition of vertical and horizontal shape change setting for hyphens
+    - for more detail, see upstream site
+      http://ossipedia.ipa.go.jp/ipafont/ipaexfont/releasenote.html
+  * debian/watch
+    - deal with upstream URI change
+
+ -- Hideki Yamane <henrich@debian.org>  Wed, 21 Nov 2012 10:15:43 +0900
+
+fonts-ipaexfont (00103-14) unstable; urgency=low
+
+  * debian/lintian*, debian/fonts-ipaexfont*.install
+    - remove those to not override "no-upstream-changelog"
+  * debian/fonts-ipaexfont-{gothic,mincho}.lintian-overrides
+    - override "package-contains-empty-directory"
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 16 Jun 2012 05:20:04 +0900
+
+fonts-ipaexfont (00103-13) unstable; urgency=low
+
+  * debian/control
+    - Bump up debhelper version to 9.20120518~ to deal with xz option
+  * debian/compat
+    - set 9
+
+ -- Hideki Yamane <henrich@debian.org>  Tue, 12 Jun 2012 17:11:39 +0900
+
+fonts-ipaexfont (00103-12) unstable; urgency=low
+
+  * debian/*.dirs
+    - re-add it to avoid error with installing alternatives (Closes: #676307)
+      Thanks to Andreas Beckmann <debian@abeckmann.de> 
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 10 Jun 2012 22:39:47 +0900
+
+fonts-ipaexfont (00103-11) unstable; urgency=low
+
+  * debian/control
+    - add "Pre-Depends: dpkg (>= 1.15.6~)"
+    - replace s/Conflicts/Breaks/ 
+  * debian/*.dirs
+    - remove unnecessary files
+  * debian/fonts-ipaexfont.install
+    - add to override lintian warning
+  * debian/lintian/fonts-ipaexfont*
+    - override "no-upstream-changelog"
+    - fix "unused-override"
+  * debian/copyright
+    - update to "Machine-readable debian/copyright file 1.0"
+
+ -- Hideki Yamane <henrich@debian.org>  Tue, 05 Jun 2012 08:18:00 +0900
+
+fonts-ipaexfont (00103-10) unstable; urgency=low
+
+  * debian/control
+    - set "Standards-Version: 3.9.3"
+  * debian/rules
+    - compress with xz
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 02 Jun 2012 03:26:31 +0900
+
+fonts-ipaexfont (00103-9) unstable; urgency=low
+
+  * debian/control
+    - set otf-* as "Priority: extra" 
+
+ -- Hideki Yamane <henrich@debian.org>  Wed, 25 Jan 2012 23:22:31 +0900
+
+fonts-ipaexfont (00103-8) unstable; urgency=low
+
+  * debian/control
+    - set Provides: fonts-japanese-{gothic,mincho} 
+
+ -- Hideki Yamane <henrich@debian.org>  Tue, 20 Sep 2011 06:00:53 +0900
+
+fonts-ipaexfont (00103-7) unstable; urgency=low
+
+  * debian/fonts-ipaexfont-mincho.preinst
+    - forgot to remove debug output. Thanks to YAMASHITA Junji <ysiijj@gmail.com>
+      (Closes: #642103) 
+
+ -- Hideki Yamane <henrich@debian.org>  Mon, 19 Sep 2011 22:59:18 +0900
+
+fonts-ipaexfont (00103-6) unstable; urgency=low
+
+  * debian/copyright
+    - update to DEP5 style
+  * debian/fonts-ipaexfont-{gothic,mincho}.install
+    - revert install path
+  * debian/fonts-ipaexfont-{gothic,mincho}.{preinst,postinst,prerm}
+    - use fonts-japanese-{gothic,mincho}.ttf, instead of 
+      ttf-japanese-{gothic,mincho} 
+
+ -- Hideki Yamane <henrich@debian.org>  Mon, 19 Sep 2011 13:06:07 +0900
+
+fonts-ipaexfont (00103-5) unstable; urgency=low
+
+  * debian/control
+    - introduce otf-ipaexfont{,-gothic,-mincho} as transitional dummy package
+    - specify version for Conflicts: and Replaces:
+    - fix Vcs-Svn field
+
+ -- Hideki Yamane <henrich@debian.org>  Fri, 29 Jul 2011 13:45:16 +0200
+
+fonts-ipaexfont (00103-4) unstable; urgency=low
+
+  * rename it from "ttf-" to "fonts-"
+  * debian/control 
+    - update Homepage: field
+    - set "Standards-Version: 3.9.2"
+    - update Vcs-* field.
+    - add "Provides: ttf-japanese-{gothic,mincho}"
+  * add fonts-ipaexfont-{gothic,micho}.dirs to avoid failing with non-exist
+    directory
+  
+ -- Hideki Yamane <henrich@debian.org>  Wed, 27 Jul 2011 19:02:33 +0200
+
+otf-ipaexfont (00103-3) unstable; urgency=low
+
+  * debian/watch
+    - deal with upstream change. They also changed to redirect from download
+      page, so not to download zip file by uscan.
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 30 Apr 2011 19:43:25 +0900
+
+otf-ipaexfont (00103-2) unstable; urgency=low
+
+  * debian/otf-ipaexfont-{gothic,mincho}.postinst
+    - fix to use /usr/share/fonts/truetype/ttf-japanese-{gothic,mincho}.ttf 
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 23 Apr 2011 14:07:39 +0900
+
+otf-ipaexfont (00103-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control
+    - bump up "Standards-Version: 3.9.1" with no change. 
+
+ -- Hideki Yamane <henrich@debian.org>  Thu, 02 Dec 2010 22:13:29 +0900
+
+otf-ipaexfont (00102-2) unstable; urgency=low
+
+  * debian/watch
+    - update it to deal with upstream change 
+  * debian/control
+    - update "Homepage:" field
+    - bump up "Standards-Version: 3.9.0" with no change.
+
+ -- Hideki Yamane <henrich@debian.org>  Fri, 23 Jul 2010 23:25:08 +0900
+
+otf-ipaexfont (00102-1) unstable; urgency=low
+
+  * New upstream release
+  * debian/control
+    - remove "DM-Upload-Allowed: yes"
+    - set "Build-Depends: debhelper (>= 7.0.50~)"
+
+ -- Hideki Yamane <henrich@debian.org>  Thu, 27 May 2010 00:29:33 +0900
+
+otf-ipaexfont (00101-2) unstable; urgency=low
+
+  * fix debian/watch
+
+ -- Hideki Yamane (Debian-JP) <henrich@debian.or.jp>  Sun, 14 Mar 2010 14:32:32 +0900
+
+otf-ipaexfont (00101-1) unstable; urgency=low
+
+  * Initial release (Closes: #565916)
+
+ -- Hideki Yamane (Debian-JP) <henrich@debian.or.jp>  Sat, 27 Feb 2010 22:32:52 +0900

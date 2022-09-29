@@ -1,0 +1,67 @@
+Source: fonts-ipaexfont
+Section: fonts
+Priority: optional
+Maintainer: Debian Fonts Task Force <debian-fonts@lists.debian.org>
+Uploaders: Hideki Yamane <henrich@debian.org>
+Build-Depends: debhelper-compat (= 13),
+Standards-Version: 4.5.1
+Homepage: https://moji.or.jp/ipafont/
+Vcs-Git: https://salsa.debian.org/fonts-team/fonts-ipaexfont.git
+Vcs-Browser: https://salsa.debian.org/fonts-team/fonts-ipaexfont
+Rules-Requires-Root: no
+
+Package: fonts-ipaexfont
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, fonts-ipaexfont-gothic, fonts-ipaexfont-mincho
+Description: Japanese OpenType font, all IPAex Fonts
+ IPAex Fonts are JIS X 0213:2004 compliant OpenType fonts based on TrueType
+ outlines. The older JIS X 0213:2000 font gliphs are also supported via IVS
+ (Ideographic Variation Sequence). These are suitable for both display and
+ printing.
+ .
+ These new fonts are developed from IPA Fonts to provide the best balance
+ for the Japanese documentation mixed with Western characters by following
+ Japanese printing tradition.  Japanese characters (Kanji, Kana and
+ punctuation marks) are full width mono-space pitch, and Western characters
+ are proportional pitch.
+ .
+ This metapackage depends on fonts-ipaexfont-{mincho,gothic} packages to
+ provide IPAex Mincho and IPAex Gothic Fonts.
+
+Package: fonts-ipaexfont-mincho
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Suggests: fonts-ipaexfont-gothic
+Provides: fonts-japanese-mincho
+Description: Japanese OpenType font, IPAex Mincho Font
+ IPAex Fonts are JIS X 0213:2004 compliant OpenType fonts, suitable for
+ both display and printing.
+ .
+ These new fonts are developed from IPA Fonts to provide the best balance
+ for the Japanese documentation mixed with Western characters by following
+ Japanese printing tradition.  Japanese characters (Kanji, Kana and
+ punctuation marks) are full width mono-space pitch, and Western characters
+ are proportional pitch.
+ .
+ This package provides IPAex Mincho Font in the Mincho (serif) style.
+
+Package: fonts-ipaexfont-gothic
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Suggests: fonts-ipaexfont-mincho
+Provides: fonts-japanese-gothic
+Description: Japanese OpenType font, IPAex Gothic Font
+ IPAex Fonts are JIS X 0213:2004 compliant OpenType fonts, suitable for
+ both display and printing.
+ .
+ These new fonts are developed from IPA Fonts to provide the best balance
+ for the Japanese documentation mixed with Western characters by following
+ Japanese printing tradition.  Japanese characters (Kanji, Kana and
+ punctuation marks) are full width mono-space pitch, and Western characters
+ are proportional pitch.
+ .
+ This package provides IPAex Gothic Font in the Gothic (san-serif) style.
+
